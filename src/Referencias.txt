@@ -1,0 +1,3 @@
+Afim de manter o código organizado sem muito comentario, decidi criar este arquivo 
+
+Criação de requisito 2, criado a partir da video aula csgd04 - Aula be 6.1 no tempo aproximado de 45 minutos
