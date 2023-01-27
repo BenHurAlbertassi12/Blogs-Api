@@ -5,3 +5,6 @@ Criação de requisito 2, criado a partir da video aula csgd04 - Aula be 6.1 no 
 alterei a estrutura dos models para o que foi apresentado no course em Relaconamentos 1:1 Dia 02:ORM
 
 belongstomany retirado do course, do dia 03 Relaconamentos N:N
+belongsto retirado do course, do dia 02 Relaconamentos 1:1
+
+hasMany não encontrei no course, então segui pelo codigo da aula aovivo
