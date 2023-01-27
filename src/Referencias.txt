@@ -1,3 +1,7 @@
 Afim de manter o código organizado sem muito comentario, decidi criar este arquivo 
 
 Criação de requisito 2, criado a partir da video aula csgd04 - Aula be 6.1 no tempo aproximado de 45 minutos
+
+alterei a estrutura dos models para o que foi apresentado no course em Relaconamentos 1:1 Dia 02:ORM
+
+belongstomany retirado do course, do dia 03 Relaconamentos N:N

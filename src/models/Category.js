@@ -1,5 +1,5 @@
-const UserSchema = (sequelize, DataTypes) => {
-  const UserTabele = sequelize.define('Category', {
+const CategorySchema = (sequelize, DataTypes) => {
+  const CategoryTable = sequelize.define('Category', {
     
     name: DataTypes.STRING,
     id: DataTypes.NUMBER,
@@ -7,6 +7,6 @@ const UserSchema = (sequelize, DataTypes) => {
     tableName: 'categories',
     underscored: true,
   })
-  return UserTabele;
+  return CategoryTable;
 };
-module.exports = UserSchema
+module.exports = CategorySchema
