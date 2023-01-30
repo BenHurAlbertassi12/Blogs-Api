@@ -8,3 +8,8 @@ belongstomany retirado do course, do dia 03 Relaconamentos N:N
 belongsto retirado do course, do dia 02 Relaconamentos 1:1
 
 hasMany não encontrei no course, então segui pelo codigo da aula aovivo
+
+validação do token encontrada no exercicios do dia 04 nos gabaritos
+
+https://sequelize.org/docs/v6/core-concepts/model-querying-finders/
+site utilizado para localizar as querys
