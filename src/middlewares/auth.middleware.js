@@ -1,17 +1,21 @@
-const { authenticateToken } = require('../utils/JWT');
+const authService = require('../services/auth.service');
 
-const validateToken = async (req, res, next) => {
-    const token = req.headers.authorization;
-    const user = await authenticateToken(token);
-    if (!user) {
-        const error = new Error('jwt malformed');
-        error.status = 401;
-        throw error;
+const validateTokens = (req, res, next) => {
+    const { authorization: token } = req.headers;
+
+    if (!token) {
+        return res.status(401).json({ message: 'Token not found' });
     }
-    res.locals.user = user;
-    next();
+
+    try {
+        const { user } = authService.validateToken(token);
+        req.auth = { user };
+        next();
+    } catch (error) {
+        return res.status(401).json({ message: 'Expired or invalid token' });
+    }
 };
 
 module.exports = {
-    validateToken,
+    validateTokens,
 };

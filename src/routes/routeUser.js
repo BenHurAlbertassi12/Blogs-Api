@@ -16,8 +16,8 @@ router.post('/', nameValid,
     passwordLeng,
     registeredEmail, user.userServ);
 
-router.get('/', auth.validateToken, user.getAll);
+router.get('/', auth.validateTokens, user.getAll);
 
-router.get('/:id', auth.validateToken, user.getById);
+router.get('/:id', auth.validateTokens, user.getById);
 
 module.exports = router;

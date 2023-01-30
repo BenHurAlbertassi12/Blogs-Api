@@ -7,7 +7,7 @@ const getAll = async () => User.findAll({
 });
 
 const getById = async (id) => User
-    .findOne(id, { attributes: { exclude: ['password'] } });
+    .findByPk(id, { attributes: { exclude: ['password'] } });
 
 module.exports = {
     createUser,
