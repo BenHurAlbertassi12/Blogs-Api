@@ -1,5 +1,5 @@
-const BlogPostSchema = (sequelize, DataTypes) => {
-    const PostCatTabele = sequelize.define('PostCategory', {
+module.exports = (sequelize, DataTypes) => {
+    const PostCategory = sequelize.define('PostCategory', {
         postId: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -11,35 +11,31 @@ const BlogPostSchema = (sequelize, DataTypes) => {
             allowNull: false,
             primaryKey: true,
         }
-    }, {
-        tableName: 'blog_post',
-        timestamps: false, // remove a obrigatoriedade de utilizar os campos `createdAt` e `updatedAt`
-        tableName: 'employees',
-        underscored: true,
-    })
-    PostCatTabele.associate =  (models)  => {
-        models.BlogPost.belongsToMany(models.Category, {
+    },
+        {
+            timestamps: false,
+            underscored: true,
+            tableName: 'posts_categories'
+        }
+    );
+
+    PostCategory.associate = (models) => {
+        models.BlogPost.belongsToMany(models.Category,
+            {
                 as: 'categories',
-                through: PostCatTabele,
-                foreignKey: 'post_id', 
-                otherKey: 'category_id', 
-            });
-            models.Category.belongsToMany(models.BlogPost, {
+                through: PostCategory,
+                foreignKey: 'post_id',
+                otherKey: 'category_id'
+            })
+
+        models.Category.belongsToMany(models.BlogPost,
+            {
                 as: 'blog_posts',
-                through: PostCatTabele,
+                through: PostCategory,
                 foreignKey: 'category_id',
-                otherKey: 'post_id',
-            });
-        };
+                otherKey: 'post_id'
+            })
+    };
 
-
-    return PostCatTabele;
+    return PostCategory;
 };
-module.exports = BlogPostSchema
-
-// Os métodos de criação de associações que o Sequelize disponibiliza são:
-
-// hasOne
-// belongsTo
-// hasMany
-// belongsToMany
